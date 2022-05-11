@@ -3,10 +3,12 @@ package fileSystem;
 import java.time.LocalDate;
 
 
-public class Archivo extends Filesystem{
+public class Archivo implements Filesystem{
 	
 	int size;
-	LocalDate ultimaModificacion;
+	
+	String nombre;
+	LocalDate fechaModificacion;
 	
 	public Archivo(String nombre, int tamanio) {
 		/**
@@ -15,8 +17,17 @@ public class Archivo extends Filesystem{
 		 */
 		this.nombre = nombre;
 		size = tamanio;
-		ultimaModificacion = LocalDate.now();
+		fechaModificacion = LocalDate.now();
 	}
+	
+	public String name() {
+		return nombre;
+	}
+	
+	public LocalDate dateModified() {
+		return fechaModificacion;
+	}
+	
 	@Override
 	public int totalSize() {
 		return size;

@@ -1,10 +1,13 @@
 package fileSystem;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Directorio extends Filesystem {
+public class Directorio implements Filesystem {
 
+	String nombre;
+	LocalDate fechaModificacion;
 	List<Filesystem> contenido = new ArrayList<Filesystem>();
 	
 	public Directorio(String nombre) {
@@ -17,6 +20,14 @@ public class Directorio extends Filesystem {
 	
 	public void remove(Filesystem file) {
 		contenido.remove(file);
+	}
+	
+	public String name() {
+		return nombre;
+	}
+	
+	public LocalDate dateModified() {
+		return fechaModificacion;
 	}
 	
 	@Override
