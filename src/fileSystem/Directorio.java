@@ -7,6 +7,10 @@ public class Directorio extends Filesystem {
 
 	List<Filesystem> contenido = new ArrayList<Filesystem>();
 	
+	public Directorio(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	public void add(Filesystem file) {
 		contenido.add(file);
 	}

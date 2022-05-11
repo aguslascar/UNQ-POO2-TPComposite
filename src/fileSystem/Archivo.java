@@ -8,11 +8,12 @@ public class Archivo extends Filesystem{
 	int size;
 	LocalDate ultimaModificacion;
 	
-	public Archivo(int tamanio) {
+	public Archivo(String nombre, int tamanio) {
 		/**
 		 * Crea un archivo con el tamaño especificado con fecha de modificacion la fecha
 		 * el cual fue creado.
 		 */
+		this.nombre = nombre;
 		size = tamanio;
 		ultimaModificacion = LocalDate.now();
 	}
